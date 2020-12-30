@@ -1,0 +1,16 @@
+incr 0
+incr 0
+incr 0
+incr 0
+incr 1
+incr 1
+#LABEL SUBTRACT
+incr 1
+decr 1
+bz DONE
+decr 1
+decr 0
+incr 2
+decr 2
+bz SUBTRACT
+#LABEL DONE
