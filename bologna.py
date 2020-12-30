@@ -66,11 +66,16 @@ def execute(instructions):
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('file')
+    argparser.add_argument('file', help='Bologna file')
+    argparser.add_argument('-p', '--preprocessor', help='print the preprocessor output and quit', action='store_true')
     args = argparser.parse_args()
     filename = args.file
     with open(filename) as progfile:
         program = progfile.read().strip()
         instructions = preprocess(program)
+        if args.preprocessor:
+            for instr in instructions:
+                print(instr[0] + ' ' + instr[1])
+            quit()
         endState = execute(instructions)
         print(endState)
