@@ -1,18 +1,21 @@
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
+#NAME 0 IN
+#NAME 1 OUT
+#NAME 2 ZERO
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
 #LABEL MOVE
-incr 0
-decr 0
+incr IN
+decr IN
 bz DONE
-decr 0
-incr 1
-incr 2
-decr 2
+decr IN
+incr OUT
+incr ZERO
+decr ZERO
 bz MOVE
 #LABEL DONE

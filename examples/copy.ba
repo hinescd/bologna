@@ -1,28 +1,32 @@
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-incr 0
-#LABEL MOVE_0_2
-incr 0
-decr 0
+#NAME 0 IN
+#NAME 1 COPY_IN
+#NAME 2 TMP
+#NAME 3 ZERO
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+incr IN
+#LABEL MOVE_IN_TMP
+incr IN
+decr IN
 bz COPY
-decr 0
-incr 2
-incr 3
-decr 3
-bz MOVE_0_2
+decr IN
+incr TMP
+incr ZERO
+decr ZERO
+bz MOVE_IN_TMP
 #LABEL COPY
-incr 2
-decr 2
+incr TMP
+decr TMP
 bz DONE
-decr 2
-incr 0
-incr 1
-incr 3
-decr 3
+decr TMP
+incr IN
+incr COPY_IN
+incr ZERO
+decr ZERO
 bz COPY
 #LABEL DONE

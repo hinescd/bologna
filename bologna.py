@@ -2,11 +2,20 @@ import argparse
 
 def preprocess(program):
     labels = {}
+    names = {}
     instructions = []
     lines = [ line.strip().lower().split() for line in program.split('\n') ]
     for line in lines:
         if line[0] == '#label':
+            if line[1] in labels:
+                print('Label already exists: ' + line[1])
+                quit()
             labels[line[1]] = len(instructions)
+        elif line[0] == '#name':
+            if line[2] in names:
+                print('Name already exists: ' + line[1])
+                quit()
+            names[line[2]] = line[1]
         else:
             instructions.append(line)
     for instr in instructions:
@@ -15,6 +24,13 @@ def preprocess(program):
                 instr[1] = str(labels[instr[1]])
             else:
                 print('Unrecognized label: ' + instr[1])
+                quit()
+        elif (instr[0] == 'incr' or instr[0] == 'decr') and not instr[1].isnumeric():
+            if instr[1] in names:
+                instr[1] = names[instr[1]]
+            else:
+                print('Unrecognized name: ' + instr[1])
+                quit()
     return instructions
 
 def execute(instructions):
