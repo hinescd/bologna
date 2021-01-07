@@ -1,0 +1,19 @@
+#NAME 0 2
+#NAME 0 IN
+#NAME 1 IN
+#NAME
+#LABEL NONSENSE
+#LABEL NONSENSe
+#LABEL something somewhere
+#LABEL 23
+incr no
+incr nonsense
+incr
+decr 44 1
+decr in
+decr 2
+bz
+bz decker
+bz 2
+bad instruction
+#LABEL
