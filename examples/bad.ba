@@ -1,3 +1,4 @@
+# A bad program, running it should produce errors
 #NAME 0 2
 #NAME 0 IN
 #NAME 1 IN

@@ -1,0 +1,14 @@
+# Output 1 if A && B, else 0
+#NAME 0 A
+#NAME 1 B
+#NAME 2 OUT
+incr A
+incr B
+incr A
+decr A
+bz DONE
+incr B
+decr B
+bz DONE
+incr OUT
+#LABEL DONE

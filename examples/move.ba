@@ -1,3 +1,4 @@
+# Move the value in memory address 0 to memory address 1
 #NAME 0 IN
 #NAME 1 OUT
 #NAME 2 ZERO

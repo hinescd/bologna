@@ -1,0 +1,20 @@
+# Output 1 if A || B, else 0
+#NAME 0 A
+#NAME 1 B
+#NAME 2 OUT
+#NAME 3 ZERO
+incr A
+incr B
+incr A
+decr A
+bz CHECK_B
+incr OUT
+incr ZERO
+decr ZERO
+bz DONE
+#LABEL CHECK_B
+incr B
+decr B
+bz DONE
+incr OUT
+#LABEL DONE

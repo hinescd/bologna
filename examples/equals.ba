@@ -1,0 +1,87 @@
+# Output 1 if A == B, else 0
+#NAME 0 A
+#NAME 1 B
+#NAME 2 OUT
+#NAME 3 A_COPY
+#NAME 4 B_COPY
+#NAME 5 TMP
+#NAME 6 ZERO
+incr A
+incr A
+incr A
+incr B
+incr B
+incr B
+#LABEL MOVE_A_TMP
+incr A
+decr A
+bz COPY_TMP_A_A_COPY
+decr A
+incr TMP
+incr ZERO
+decr ZERO
+bz MOVE_A_TMP
+#LABEL COPY_TMP_A_A_COPY
+incr TMP
+decr TMP
+bz MOVE_B_TMP
+decr TMP
+incr A
+incr A_COPY
+incr ZERO
+decr ZERO
+bz COPY_TMP_A_A_COPY
+#LABEL MOVE_B_TMP
+incr B
+decr B
+bz COPY_TMP_B_B_COPY
+decr B
+incr TMP
+incr ZERO
+decr ZERO
+bz MOVE_B_TMP
+#LABEL COPY_TMP_B_B_COPY
+incr TMP
+decr TMP
+bz START
+decr TMP
+incr B
+incr B_COPY
+incr ZERO
+decr ZERO
+bz COPY_TMP_B_B_COPY
+#LABEL START
+incr A_COPY
+decr A_COPY
+bz A_ZERO
+incr B_COPY
+decr B_COPY
+bz CLEAR_A
+decr A_COPY
+decr B_COPY
+incr ZERO
+decr ZERO
+bz START
+#LABEL A_ZERO
+incr B_COPY
+decr B_COPY
+bz EQUAL
+#LABEL CLEAR_B
+incr B_COPY
+decr B_COPY
+bz DONE
+decr B_COPY
+incr ZERO
+decr ZERO
+bz CLEAR_B
+#LABEL CLEAR_A
+incr A_COPY
+decr A_COPY
+bz DONE
+decr A_COPY
+incr ZERO
+decr ZERO
+bz CLEAR_A
+#LABEL EQUAL
+incr OUT
+#LABEL DONE

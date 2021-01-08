@@ -1,3 +1,4 @@
+# Calculate IN1*IN2
 #NAME 0 IN1
 #NAME 1 IN2
 #NAME 2 PRODUCT

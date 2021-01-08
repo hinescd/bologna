@@ -1,0 +1,10 @@
+# Output 1 if A == 0, else 0
+#NAME 0 A
+#NAME 1 OUT
+incr A
+incr OUT
+incr A
+decr A
+bz DONE
+decr OUT
+#LABEL DONE

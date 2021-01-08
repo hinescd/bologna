@@ -1,3 +1,4 @@
+# Copy the value in address 0 to address 1
 #NAME 0 IN
 #NAME 1 COPY_IN
 #NAME 2 TMP
