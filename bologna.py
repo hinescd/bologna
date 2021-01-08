@@ -71,6 +71,9 @@ def preprocess(program):
         print('Program cannot be ran.')
         quit()
     for line in program:
+        if len(line) == 0 or line[0] == '#':
+            # Ignore empty lines and comments
+            continue
         if line[0] == '#label':
             labels[line[1]] = len(instructions)
         elif line[0] == '#name':
