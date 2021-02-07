@@ -3,14 +3,7 @@
 #NAME 1 COPY_IN
 #NAME 2 TMP
 #NAME 3 ZERO
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
+#REPEAT 8 incr IN
 #LABEL MOVE_IN_TMP
 incr IN
 decr IN

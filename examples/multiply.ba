@@ -6,15 +6,8 @@
 #NAME 4 IN2_COPY
 #NAME 5 TMP
 #NAME 6 ZERO
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN2
-incr IN2
-incr IN2
-incr IN2
-incr IN2
+#REPEAT 4 incr IN1
+#REPEAT 5 incr IN2
 #LABEL MOVE_IN1_TMP
 incr IN1
 decr IN1

@@ -43,8 +43,18 @@ def check_errors(program):
             # Ignore empty lines and comments
             continue
         if line[0] == '#label' or line[0] == '#name':
-            # preprocessor commands have already been checked
+            # label, name commands have already been checked
             continue
+        elif line[0] == '#repeat':
+            if len(line) != 4:
+                errors.append(Error(line_no+1, 'Incorrect repeat syntax.'))
+                continue
+            if not line[1].isnumeric():
+                errors.append(Error(line_no+1, 'Repeat takes a constant.'))
+            if line[2] not in ['incr', 'decr']:
+                errors.append(Error(line_no+1, 'Repeat can only be used for incr or decr.'))
+            if not line[3].isnumeric() and line[3] not in names:
+                errors.append(Error(line_no+1, 'Name ' + line[3] + ' not found.'))
         elif line[0] == 'bz':
             if len(line) != 2:
                 errors.append(Error(line_no+1, 'Incorrect bz syntax.'))
@@ -79,6 +89,9 @@ def preprocess(program):
             labels[line[1]] = len(instructions)
         elif line[0] == '#name':
             names[line[2]] = line[1]
+        elif line[0] == '#repeat':
+            for i in range(int(line[1])):
+                instructions.append(line[2:])
         else:
             instructions.append(line)
     for instr in instructions:

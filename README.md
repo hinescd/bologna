@@ -15,9 +15,10 @@ There are three instructions: `incr`, `decr`, and `bz`.
 
 ## Preprocessor
 Bologna makes use of a preprocessor, which makes writing programs much easier.
-The preprocessor currently supports labeling points in the program and naming
-memory addresses. In the future, macros will be added to the preprocessor to
-allow code reuse.
+The preprocessor currently supports repeating `incr` and `decr` instructions a
+constant number of times, labeling points in the program, and naming memory
+addresses. In the future, macros will be added to the preprocessor to allow code
+reuse.
 
 ### Labels
 Using labels means the programmer doesn't have to manually keep track of
@@ -37,3 +38,11 @@ and `decr` instructions, so `incr INPUT` gets rewritten by the preprocessor as
 names in instructions before defining the name), and a name cannot be defined
 more than once. The same memory address can be referred to by multiple names,
 but this should be avoided and is subject to change.
+
+### Repeat
+Repeats allow the programmer to initialize memory locations more easily. To make
+memory address `0` store the number `5`, you can just tell the preprocessor to
+generate 5 `incr 0` commands instead of writing them all out yourself. This
+would be done by `#REPEAT 5 incr 0`. The repeat preprocessor command can use
+names in the instruction to be repeated, but the number of times to repeat the
+instruction needs to be a constant.

@@ -6,15 +6,8 @@
 #NAME 4 A_COPY
 #NAME 5 B_COPY
 #NAME 6 TMP
-incr A
-incr A
-incr A
-incr A
-incr A
-incr A
-incr A
-incr B
-incr B
+#REPEAT 7 incr A
+#REPEAT 2 incr B
 
 # copy A to A_COPY
 #LABEL MOVE_A

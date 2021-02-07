@@ -18,3 +18,5 @@ bz decker
 bz 2
 bad instruction
 #LABEL
+#REPEAT 3
+#REPEAT 4 incr none

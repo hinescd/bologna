@@ -4,22 +4,8 @@
 #NAME 2 SUM
 #NAME 3 TMP
 #NAME 4 ZERO
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN1
-incr IN2
-incr IN2
-incr IN2
-incr IN2
-incr IN2
+#REPEAT 11 incr IN1
+#REPEAT 5 incr IN2
 #LABEL MOVE_IN1_TMP
 incr IN1
 decr IN1

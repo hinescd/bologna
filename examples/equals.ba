@@ -6,12 +6,8 @@
 #NAME 4 B_COPY
 #NAME 5 TMP
 #NAME 6 ZERO
-incr A
-incr A
-incr A
-incr B
-incr B
-incr B
+#REPEAT 3 incr A
+#REPEAT 3 incr B
 #LABEL MOVE_A_TMP
 incr A
 decr A

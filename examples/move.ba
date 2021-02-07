@@ -2,14 +2,7 @@
 #NAME 0 IN
 #NAME 1 OUT
 #NAME 2 ZERO
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
-incr IN
+#REPEAT 8 incr IN
 #LABEL MOVE
 incr IN
 decr IN
